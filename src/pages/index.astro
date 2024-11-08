@@ -1,5 +1,6 @@
 ---
-
+import { services } from "../utils/services";
+import rocketIcon from "../../public/rocket.svg";
 ---
 
 <!doctype html>
@@ -140,10 +141,7 @@
 				</div>
 			</div>
 		</header>
-
-		<!-- Main content -->
 		<main id="main-content">
-			<!-- Sekcja Usług -->
 			<section class="py-20">
 				<div class="container mx-auto px-4">
 					<h2 class="text-4xl font-bold text-center mb-4">Nasze Usługi</h2>
@@ -151,52 +149,26 @@
 						Dostarczamy kompleksowe rozwiązania dopasowane do Twoich potrzeb
 					</p>
 					<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-						<!-- Karta usługi z gradientem -->
-						<article
-							class="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary/5 to-secondary/5 p-1"
-						>
-							<div
-								class="absolute inset-0 bg-gradient-to-br from-primary to-secondary opacity-0 group-hover:opacity-10 transition-opacity duration-300"
-							>
-							</div>
-							<div
-								class="relative bg-white p-8 rounded-xl h-full flex flex-col"
-							>
-								<div class="mb-6">
-									<span
-										class="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-primary/10 text-primary"
-									>
-										<svg
-											class="w-8 h-8"
-											fill="none"
-											stroke="currentColor"
-											viewBox="0 0 24 24"
-										>
-											<!-- Ikona -->
-										</svg>
-									</span>
-								</div>
-								<h3 class="text-xl font-semibold mb-4">Projekty Stron WWW</h3>
-								<p class="text-gray-600 mb-6">
-									Tworzymy unikalne, nowoczesne projekty dostosowane do Twoich
-									potrzeb.
-								</p>
-								<ul class="mt-auto space-y-3">
-									<li class="flex items-center text-gray-600">
-										<svg
-											class="w-5 h-5 text-primary mr-2"
-											fill="currentColor"
-											viewBox="0 0 20 20"
-										>
-											<path
-												d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-											></path>
-										</svg>
-										Nowoczesny design
-									</li>
-								</ul>
-							</div>
-						</article>
+						{
+							services.map((service) => (
+								<article class="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary/5 to-secondary/5 p-1">
+									<div class="absolute inset-0 bg-gradient-to-br from-primary to-secondary opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+									<div class="relative bg-white p-8 rounded-xl h-full flex flex-col">
+										<div class="mb-6">
+											<span class="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-primary/5 text-primary">
+												<img src={service.icon} alt={service.alt} class="w-8 h-8">
+											</span>
+										</div>
+										<h3 class="text-xl font-semibold mb-4">
+											{service.title}
+										</h3>
+										<p class="text-gray-600">
+											{service.desc}
+										</p>
+									</div>
+								</article>
+							))
+						}
 					</div>
 				</div>
 			</section>
