@@ -3,7 +3,7 @@
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="pl">
 	<head>
 		<meta charset="UTF-8" />
 		<meta
@@ -15,101 +15,98 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Niki codes</title>
+
+		<style>
+			.mobile-menu {
+				transform: translateX(100%);
+				transition: transform 0.3s ease-in-out;
+			}
+
+			.mobile-menu.active {
+				transform: translateX(0);
+			}
+
+			.burger-line {
+				transition: all 0.3s ease-in-out;
+			}
+
+			.burger-active .line1 {
+				transform: rotate(45deg) translate(6px, 6px);
+				background-color: white;
+			}
+
+			.burger-active .line2 {
+				opacity: 0;
+			}
+
+			.burger-active .line3 {
+				transform: rotate(-45deg) translate(6px, -6px);
+				background-color: white;
+			}
+		</style>
 	</head>
 	<body class="bg-gray-50 text-gray-900">
-		<!-- Skip to main content dla użytkowników klawiatury -->
-		<a
-			href="#main-content"
-			class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-white px-4 py-2 rounded-md"
-		>
-			Przejdź do głównej treści
-		</a>
-
-		<!-- Header z nawigacją -->
 		<header
 			class="min-h-screen relative overflow-hidden bg-gradient-to-br from-primary to-secondary"
 		>
 			<nav
-				class="fixed top-0 left-0 right-0 bg-white/10 backdrop-blur-lg border-b border-white/20 z-50"
-				role="navigation"
-				aria-label="Menu główne"
+				class="fixed top-0 left-0 right-0 bg-white/10 backdrop-blur-lg border-b border-gray/20 z-50"
 			>
-				<div class="container mx-auto px-4">
-					<div class="flex flex-col md:flex-row justify-between items-center">
-						<h1 class="text-2xl font-bold">
-							<a
-								href="/"
-								class="focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary rounded-md px-2"
-							>
-								WebMaster Studio
-							</a>
-						</h1>
-
-						<!-- Hamburger menu dla mobile -->
-						<button
-							class="md:hidden mt-4 p-2 rounded-lg border border-white"
-							aria-expanded="false"
-							aria-controls="mobile-menu"
-							aria-label="Menu mobilne"
-						>
-							<svg
-								class="w-6 h-6"
-								fill="none"
-								stroke="currentColor"
-								viewBox="0 0 24 24"
-							>
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="2"
-									d="M4 6h16M4 12h16m-16 6h16"></path>
-							</svg>
-						</button>
-
-						<!-- Menu desktop -->
+				<div class="container mx-auto px-4 text-gray-900">
+					<div class="flex items-center justify-between h-16">
+						<a href="/" class="text-md font-bold">Niki Codes</a>
 						<div class="hidden md:flex space-x-8">
 							<a
 								href="#uslugi"
-								class="hover:text-indigo-200 transition focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary rounded-md px-2 py-1"
+								class="text-white hover:text-blue-200 transition sm:text-gray-900 sm:font-semibold"
 								>Usługi</a
 							>
 							<a
 								href="#portfolio"
-								class="hover:text-indigo-200 transition focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary rounded-md px-2 py-1"
+								class="text-white hover:text-blue-200 transition sm:text-gray-900 sm:font-semibold"
 								>Portfolio</a
 							>
 							<a
 								href="#kontakt"
-								class="hover:text-indigo-200 transition focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary rounded-md px-2 py-1"
+								class="text-white hover:text-blue-200 transition sm:text-gray-900 sm:font-semibold"
 								>Kontakt</a
 							>
 						</div>
 
-						<!-- Menu mobile -->
-						<div id="mobile-menu" class="md:hidden w-full mt-4 hidden">
-							<div class="flex flex-col space-y-4">
-								<a
-									href="#uslugi"
-									class="text-center py-2 hover:bg-white/20 rounded-md transition"
-									>Usługi</a
-								>
-								<a
-									href="#portfolio"
-									class="text-center py-2 hover:bg-white/20 rounded-md transition"
-									>Portfolio</a
-								>
-								<a
-									href="#kontakt"
-									class="text-center py-2 hover:bg-white/20 rounded-md transition"
-									>Kontakt</a
-								>
-							</div>
-						</div>
+						<button
+							id="burger-btn"
+							class="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 z-50"
+							aria-label="Menu"
+						>
+							<span class="burger-line w-6 h-0.5 bg-gray-900 line1"></span>
+							<span class="burger-line w-6 h-0.5 bg-gray-900 line2"></span>
+							<span class="burger-line w-6 h-0.5 bg-gray-900 line3"></span>
+						</button>
+					</div>
+				</div>
+				<div
+					id="mobile-menu"
+					class="mobile-menu fixed top-0 right-0 h-screen w-64 bg-primary backdrop-blur-lg bg-opacity-98 shadow-lg z-20 md:hidden"
+				>
+					<div class="flex flex-col pt-20 px-6">
+						<a
+							href="#uslugi"
+							class="text-white py-3 border-b border-white/10 hover:pl-2 transition-all duration-300"
+							>Usługi</a
+						>
+						<a
+							href="#portfolio"
+							class="text-white py-3 border-b border-white/10 hover:pl-2 transition-all duration-300"
+							>Portfolio</a
+						>
+						<a
+							href="#kontakt"
+							class="text-white py-3 border-b border-white/10 hover:pl-2 transition-all duration-300"
+							>Kontakt</a
+						>
 					</div>
 				</div>
 			</nav>
-
-			<!-- Hero section -->
 			<div
 				class="relative z-10 container mx-auto px-4 h-screen flex items-center justify-center"
 			>
@@ -117,25 +114,27 @@
 					<h1
 						class="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-100"
 					>
-						Tworzymy strony
-						<span class="block mt-2">z pasją</span>
+						Strony internetowe
+						<span class="block">z pasją</span>
 					</h1>
 					<p class="text-xl md:text-2xl text-blue-100 mb-12 max-w-2xl mx-auto">
 						Przekształcamy Twoje wizje w nowoczesne, responsywne strony
 						internetowe
 					</p>
-					<div class="flex flex-col sm:flex-row gap-4 justify-center">
+					<div
+						class="flex flex-col sm:flex-row gap-4 justify-center max-w-64 mx-auto sm:max-w-none"
+					>
+						<a
+							href="#portfolio"
+							class="px-8 py-4 bg-white/10 backdrop-blur-lg text-white border border-white/20 rounded-full font-semibold hover:bg-white/20 hover:scale-105 transition-all duration-300"
+						>
+							Zobacz portfolio
+						</a>
 						<a
 							href="#kontakt"
 							class="px-8 py-4 bg-white text-primary rounded-full font-semibold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
 						>
 							Rozpocznij projekt
-						</a>
-						<a
-							href="#portfolio"
-							class="px-8 py-4 bg-white/10 backdrop-blur-lg text-white border border-white/20 rounded-full font-semibold hover:bg-white/20 transition-all duration-300"
-						>
-							Zobacz portfolio
 						</a>
 					</div>
 				</div>
@@ -149,8 +148,7 @@
 				<div class="container mx-auto px-4">
 					<h2 class="text-4xl font-bold text-center mb-4">Nasze Usługi</h2>
 					<p class="text-gray-600 text-center mb-16 max-w-2xl mx-auto">
-						Dostarczamy kompleksowe rozwiązania webowe dopasowane do Twoich
-						potrzeb
+						Dostarczamy kompleksowe rozwiązania dopasowane do Twoich potrzeb
 					</p>
 					<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 						<!-- Karta usługi z gradientem -->
@@ -355,17 +353,46 @@
 
 		<!-- Skrypt dla menu mobilnego -->
 		<script>
-			const mobileMenuButton = document.querySelector(
-				'[aria-controls="mobile-menu"]'
-			);
-			const mobileMenu = document.getElementById("mobile-menu");
+			// Bardziej szczegółowe typowanie
+			const burgerBtn = document.getElementById(
+				"burger-btn"
+			) as HTMLButtonElement | null;
+			const mobileMenu = document.getElementById(
+				"mobile-menu"
+			) as HTMLDivElement | null;
 
-			if (mobileMenuButton && mobileMenu) {
-				mobileMenuButton.addEventListener("click", () => {
-					const isExpanded =
-						mobileMenuButton.getAttribute("aria-expanded") === "true";
-					mobileMenuButton.setAttribute("aria-expanded", String(!isExpanded));
-					mobileMenu.classList.toggle("hidden");
+			if (burgerBtn && mobileMenu) {
+				burgerBtn.addEventListener("click", () => {
+					burgerBtn.classList.toggle("burger-active");
+					mobileMenu.classList.toggle("active");
+
+					const isExpanded = mobileMenu.classList.contains("active");
+					burgerBtn.setAttribute("aria-expanded", String(isExpanded));
+				});
+
+				// Zamykanie menu po kliknięciu w link
+				const mobileLinks = mobileMenu.querySelectorAll<HTMLAnchorElement>("a");
+				mobileLinks.forEach((link) => {
+					link.addEventListener("click", () => {
+						mobileMenu.classList.remove("active");
+						burgerBtn.classList.remove("burger-active");
+						burgerBtn.setAttribute("aria-expanded", "false");
+					});
+				});
+
+				// Zamykanie menu po kliknięciu poza nim
+				document.addEventListener("click", (e: MouseEvent) => {
+					const target = e.target as HTMLElement;
+					if (
+						target &&
+						!mobileMenu.contains(target) &&
+						!burgerBtn.contains(target) &&
+						mobileMenu.classList.contains("active")
+					) {
+						mobileMenu.classList.remove("active");
+						burgerBtn.classList.remove("burger-active");
+						burgerBtn.setAttribute("aria-expanded", "false");
+					}
 				});
 			}
 		</script>

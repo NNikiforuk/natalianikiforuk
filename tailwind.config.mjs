@@ -12,6 +12,7 @@ export default {
 					DEFAULT: "#4f46e5",
 					dark: "#4338ca",
 				},
+				yellow: "#EBAD25",
 			},
 		},
 	},
