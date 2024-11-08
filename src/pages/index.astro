@@ -1,6 +1,6 @@
 ---
 import { services } from "../utils/services";
-import rocketIcon from "../../public/rocket.svg";
+import { projects } from "../utils/projects";
 ---
 
 <!doctype html>
@@ -59,17 +59,17 @@ import rocketIcon from "../../public/rocket.svg";
 						<div class="hidden md:flex space-x-8">
 							<a
 								href="#uslugi"
-								class="text-white hover:text-blue-200 transition sm:text-gray-900 sm:font-semibold"
+								class="text-white hover:text-blue-900 transition sm:text-gray-900 sm:font-semibold"
 								>Usługi</a
 							>
 							<a
 								href="#portfolio"
-								class="text-white hover:text-blue-200 transition sm:text-gray-900 sm:font-semibold"
+								class="text-white hover:text-blue-900 transition sm:text-gray-900 sm:font-semibold"
 								>Portfolio</a
 							>
 							<a
 								href="#kontakt"
-								class="text-white hover:text-blue-200 transition sm:text-gray-900 sm:font-semibold"
+								class="text-white hover:text-blue-900 transition sm:text-gray-900 sm:font-semibold"
 								>Kontakt</a
 							>
 						</div>
@@ -152,19 +152,19 @@ import rocketIcon from "../../public/rocket.svg";
 						{
 							services.map((service) => (
 								<article class="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary/5 to-secondary/5 p-1">
-									<div class="absolute inset-0 bg-gradient-to-br from-primary to-secondary opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+									<div class="absolute inset-0 bg-gradient-to-br from-primary to-secondary opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
 									<div class="relative bg-white p-8 rounded-xl h-full flex flex-col">
 										<div class="mb-6">
 											<span class="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-primary/5 text-primary">
-												<img src={service.icon} alt={service.alt} class="w-8 h-8">
+												<img
+													src={service.icon}
+													alt={service.alt}
+													class="w-8 h-8"
+												/>
 											</span>
 										</div>
-										<h3 class="text-xl font-semibold mb-4">
-											{service.title}
-										</h3>
-										<p class="text-gray-600">
-											{service.desc}
-										</p>
+										<h3 class="text-xl font-semibold mb-4">{service.title}</h3>
+										<p class="text-gray-600">{service.desc}</p>
 									</div>
 								</article>
 							))
@@ -172,7 +172,6 @@ import rocketIcon from "../../public/rocket.svg";
 					</div>
 				</div>
 			</section>
-			<!-- Portfolio -->
 			<section class="py-20 bg-gray-50">
 				<div class="container mx-auto px-4">
 					<h2 class="text-4xl font-bold text-center mb-4">Nasze Realizacje</h2>
@@ -180,40 +179,33 @@ import rocketIcon from "../../public/rocket.svg";
 						Zobacz przykłady naszych najnowszych projektów
 					</p>
 					<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-						<!-- Karta portfolio z efektem hover -->
-						<article
-							class="group relative overflow-hidden rounded-2xl bg-white shadow-lg"
-						>
-							<div class="aspect-video overflow-hidden">
-								<img
-									src="/api/placeholder/400/300"
-									alt="Projekt sklepu"
-									class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-								/>
-							</div>
-							<div
-								class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"
-							>
-								<div
-									class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-6 group-hover:translate-y-0 transition-transform duration-300"
-								>
-									<h3 class="text-xl font-semibold mb-2">Sklep E-commerce</h3>
-									<p class="text-gray-200 mb-4">
-										Nowoczesny sklep internetowy z pełną integracją płatności
-									</p>
-									<div class="flex flex-wrap gap-2">
-										<span
-											class="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm"
-											>React</span
-										>
-										<span
-											class="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm"
-											>Next.js</span
-										>
+						{
+							projects.map((project) => (
+								<article class="group relative cursor-pointer">
+									<div class="sm:hidden text-center pb-4">
+										<h3 class="font-bold">{project.title}</h3>
+										<div>{project.desc}</div>
 									</div>
-								</div>
-							</div>
-						</article>
+									<div>
+										<a href={project.link} target="_blank">
+											<img
+												src={project.img}
+												alt={project.title}
+												class="w-full h-full object-cover sm:transition-transform sm:duration-500"
+											/>
+										</a>
+									</div>
+									<div class="hidden sm:block absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300">
+										<div class="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-6 group-hover:translate-y-0 transition-transform duration-300">
+											<h3 class="text-xl font-semibold mb-2">
+												{project.title}
+											</h3>
+											<p class="text-gray-200 mb-4">{project.desc}</p>
+										</div>
+									</div>
+								</article>
+							))
+						}
 					</div>
 				</div>
 			</section>
