@@ -30,11 +30,14 @@ import { prices } from "../utils/prices";
 
 			.burger-line {
 				transition: all 0.3s ease-in-out;
+				height: 4px;
+				width: 40px;
+				background-color: #e5e7eb;
+				border-radius: 5px;
 			}
 
 			.burger-active .line1 {
-				transform: rotate(45deg) translate(6px, 6px);
-				background-color: #f0f8ff;
+				transform: rotate(45deg) translate(8.5px, 8.5px);
 			}
 
 			.burger-active .line2 {
@@ -42,8 +45,7 @@ import { prices } from "../utils/prices";
 			}
 
 			.burger-active .line3 {
-				transform: rotate(-45deg) translate(6px, -6px);
-				background-color: #f0f8ff;
+				transform: rotate(-45deg) translate(8.5px, -8.5px);
 			}
 		</style>
 	</head>
@@ -54,7 +56,7 @@ import { prices } from "../utils/prices";
 			<nav
 				class="fixed top-0 left-0 right-0 bg-customWhite/10 backdrop-blur-lg border-b border-gray/20 z-50"
 			>
-				<div class="container mx-auto px-4 text-gray-900">
+				<div class="container mx-auto px-4 bg-secondary text-gray-50">
 					<div class="flex items-center justify-between h-16">
 						<a href="/" class="text-md font-bold">Niki Codes</a>
 						<div class="hidden md:flex space-x-8">
@@ -77,33 +79,33 @@ import { prices } from "../utils/prices";
 
 						<button
 							id="burger-btn"
-							class="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 z-50"
+							class="md:hidden flex flex-col justify-center items-center gap-y-2 z-50"
 							aria-label="Menu"
 						>
-							<span class="burger-line w-6 h-0.5 bg-gray-900 line1"></span>
-							<span class="burger-line w-6 h-0.5 bg-gray-900 line2"></span>
-							<span class="burger-line w-6 h-0.5 bg-gray-900 line3"></span>
+							<span class="burger-line line1"></span>
+							<span class="burger-line line2"></span>
+							<span class="burger-line line3"></span>
 						</button>
 					</div>
 				</div>
 				<div
 					id="mobile-menu"
-					class="mobile-menu fixed top-0 right-0 h-screen w-64 bg-primary backdrop-blur-lg bg-opacity-98 shadow-lg z-20 md:hidden"
+					class="mobile-menu fixed top-0 right-0 h-screen w-full bg-secondary backdrop-blur-lg bg-opacity-98 shadow-lg z-20 md:hidden"
 				>
 					<div class="flex flex-col pt-20 px-6">
 						<a
 							href="#uslugi"
-							class="text-customWhite py-3 border-b border-customWhite/10 hover:pl-2 transition-all duration-300"
+							class="text-customWhite text-center py-3 border-b border-customWhite/10 hover:pl-2 transition-all duration-300 font-bold"
 							>Usługi</a
 						>
 						<a
 							href="#portfolio"
-							class="text-customWhite py-3 border-b border-customWhite/10 hover:pl-2 transition-all duration-300"
+							class="text-customWhite text-center py-3 border-b border-customWhite/10 hover:pl-2 transition-all duration-300 font-bold"
 							>Portfolio</a
 						>
 						<a
 							href="#kontakt"
-							class="text-customWhite py-3 border-b border-customWhite/10 hover:pl-2 transition-all duration-300"
+							class="text-customWhite text-center py-3 border-b border-customWhite/10 hover:pl-2 transition-all duration-300 font-bold"
 							>Kontakt</a
 						>
 					</div>
