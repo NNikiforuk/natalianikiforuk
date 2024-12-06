@@ -12,7 +12,7 @@ export default {
 				},
 				yellow: "#EBAD25",
 				customWhite: "#F0F8FF",
-				purple: "#5E7357",
+				purple: "#480068",
 			},
 		},
 	},

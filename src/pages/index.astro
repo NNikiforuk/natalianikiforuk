@@ -2,6 +2,7 @@
 import { services } from "../utils/services";
 import { projects } from "../utils/projects";
 import { prices } from "../utils/prices";
+import { process } from "../utils/process";
 ---
 
 <!doctype html>
@@ -245,78 +246,177 @@ import { prices } from "../utils/prices";
 					</div>
 				</div>
 			</section>
-		</main>
 
-		<footer class="bg-gray-900 text-customWhite py-12" role="contentinfo">
-			<div class="container mx-auto px-4">
-				<div class="flex flex-col md:flex-row justify-between items-center">
-					<div class="mb-8 md:mb-0">
-						<div class="text-2xl font-bold mb-4">Natalia Nikiforuk</div>
-						<p class="text-gray-400">Profesjonalne strony internetowe</p>
-						<address class="text-gray-400 mt-4 not-italic">
-							<p>
-								Tel: <a
-									href="tel:+48512227842"
-									class="hover:text-customWhite transition">+48 512 227 842</a
+			<section class="py-20 bg-gray-50">
+				<div class="container mx-auto px-4">
+					<h2 class="text-4xl font-bold text-center mb-4">Jak działamy?</h2>
+					<div class="relative mt-10">
+						<div class="absolute left-8 top-0 bottom-0 w-0.5 bg-yellow/40">
+						</div>
+
+						{
+							process.map((el) => (
+								<div class="group mb-16">
+									<div class="flex items-center gap-8 relative">
+										<div
+											class={`w-16 h-16 rounded-full flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform ${el.alert ? "bg-purple" : "bg-yellow"}`}
+										>
+											<span>
+												<img
+													width="40"
+													height="auto"
+													src={el.src}
+													alt={el.alt}
+												/>
+											</span>
+										</div>
+										<div class="bg-white p-6 rounded-xl shadow-lg flex-1 group-hover:-translate-y-1 transition-transform shadow-yellow/10">
+											<h3 class="text-gray-600">{el.title}</h3>
+										</div>
+									</div>
+								</div>
+							))
+						}
+
+						<!-- <div class="group mb-16">
+							<div class="flex items-center gap-8 relative">
+								<div
+									class="w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform"
 								>
-							</p>
-							<p>
-								Email: <a
-									href="mailto:kontakt@webmaster.pl"
-									class="hover:text-customWhite transition"
-									>kontakt@webmaster.pl</a
+									<span class="text-2xl">🎨</span>
+								</div>
+								<div
+									class="bg-white p-6 rounded-xl shadow-lg flex-1 group-hover:-translate-y-1 transition-transform"
 								>
-							</p>
-						</address>
+									<h3 class="text-xl font-bold mb-2">Prototyp</h3>
+									<p class="text-gray-600">Design i makiety</p>
+								</div>
+							</div>
+						</div> -->
+
+						<!-- <div class="group mb-16">
+							<div class="flex items-center gap-8 relative">
+								<div
+									class="w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform"
+								>
+									<span class="text-2xl">💻</span>
+								</div>
+								<div
+									class="bg-white p-6 rounded-xl shadow-lg flex-1 group-hover:-translate-y-1 transition-transform"
+								>
+									<h3 class="text-xl font-bold mb-2">Programowanie</h3>
+									<p class="text-gray-600">Implementacja</p>
+								</div>
+							</div>
+						</div> -->
+
+						<!-- <div class="group mb-16">
+							<div class="flex items-center gap-8 relative">
+								<div
+									class="w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform"
+								>
+									<span class="text-2xl">✓</span>
+								</div>
+								<div
+									class="bg-white p-6 rounded-xl shadow-lg flex-1 group-hover:-translate-y-1 transition-transform"
+								>
+									<h3 class="text-xl font-bold mb-2">Ocena</h3>
+									<p class="text-gray-600">Testy i poprawki</p>
+								</div>
+							</div>
+						</div> -->
+
+						<!-- <div class="group mb-16">
+							<div class="flex items-center gap-8 relative">
+								<div
+									class="w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform"
+								>
+									<span class="text-2xl">📦</span>
+								</div>
+								<div
+									class="bg-white p-6 rounded-xl shadow-lg flex-1 group-hover:-translate-y-1 transition-transform"
+								>
+									<h3 class="text-xl font-bold mb-2">Oddanie</h3>
+									<p class="text-gray-600">Wdrożenie</p>
+								</div>
+							</div>
+						</div> -->
 					</div>
 				</div>
-				<div
-					class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400"
-				>
-					<p>&copy; {new Date().getFullYear()} Niki codes</p>
+			</section>
+
+			<footer class="bg-gray-900 text-customWhite py-12" role="contentinfo">
+				<div class="container mx-auto px-4">
+					<div class="flex flex-col md:flex-row justify-between items-center">
+						<div class="mb-8 md:mb-0">
+							<div class="text-2xl font-bold mb-4">Natalia Nikiforuk</div>
+							<p class="text-gray-400">Profesjonalne strony internetowe</p>
+							<address class="text-gray-400 mt-4 not-italic">
+								<p>
+									Tel: <a
+										href="tel:+48512227842"
+										class="hover:text-customWhite transition">+48 512 227 842</a
+									>
+								</p>
+								<p>
+									Email: <a
+										href="mailto:kontakt@webmaster.pl"
+										class="hover:text-customWhite transition"
+										>kontakt@webmaster.pl</a
+									>
+								</p>
+							</address>
+						</div>
+					</div>
+					<div
+						class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400"
+					>
+						<p>&copy; {new Date().getFullYear()} Niki codes</p>
+					</div>
 				</div>
-			</div>
-		</footer>
-		<script>
-			const burgerBtn = document.getElementById(
-				"burger-btn"
-			) as HTMLButtonElement | null;
-			const mobileMenu = document.getElementById(
-				"mobile-menu"
-			) as HTMLDivElement | null;
+			</footer>
+			<script>
+				const burgerBtn = document.getElementById(
+					"burger-btn"
+				) as HTMLButtonElement | null;
+				const mobileMenu = document.getElementById(
+					"mobile-menu"
+				) as HTMLDivElement | null;
 
-			if (burgerBtn && mobileMenu) {
-				burgerBtn.addEventListener("click", () => {
-					burgerBtn.classList.toggle("burger-active");
-					mobileMenu.classList.toggle("active");
+				if (burgerBtn && mobileMenu) {
+					burgerBtn.addEventListener("click", () => {
+						burgerBtn.classList.toggle("burger-active");
+						mobileMenu.classList.toggle("active");
 
-					const isExpanded = mobileMenu.classList.contains("active");
-					burgerBtn.setAttribute("aria-expanded", String(isExpanded));
-				});
-
-				const mobileLinks = mobileMenu.querySelectorAll<HTMLAnchorElement>("a");
-				mobileLinks.forEach((link) => {
-					link.addEventListener("click", () => {
-						mobileMenu.classList.remove("active");
-						burgerBtn.classList.remove("burger-active");
-						burgerBtn.setAttribute("aria-expanded", "false");
+						const isExpanded = mobileMenu.classList.contains("active");
+						burgerBtn.setAttribute("aria-expanded", String(isExpanded));
 					});
-				});
 
-				document.addEventListener("click", (e: MouseEvent) => {
-					const target = e.target as HTMLElement;
-					if (
-						target &&
-						!mobileMenu.contains(target) &&
-						!burgerBtn.contains(target) &&
-						mobileMenu.classList.contains("active")
-					) {
-						mobileMenu.classList.remove("active");
-						burgerBtn.classList.remove("burger-active");
-						burgerBtn.setAttribute("aria-expanded", "false");
-					}
-				});
-			}
-		</script>
+					const mobileLinks =
+						mobileMenu.querySelectorAll<HTMLAnchorElement>("a");
+					mobileLinks.forEach((link) => {
+						link.addEventListener("click", () => {
+							mobileMenu.classList.remove("active");
+							burgerBtn.classList.remove("burger-active");
+							burgerBtn.setAttribute("aria-expanded", "false");
+						});
+					});
+
+					document.addEventListener("click", (e: MouseEvent) => {
+						const target = e.target as HTMLElement;
+						if (
+							target &&
+							!mobileMenu.contains(target) &&
+							!burgerBtn.contains(target) &&
+							mobileMenu.classList.contains("active")
+						) {
+							mobileMenu.classList.remove("active");
+							burgerBtn.classList.remove("burger-active");
+							burgerBtn.setAttribute("aria-expanded", "false");
+						}
+					});
+				}
+			</script>
+		</main>
 	</body>
 </html>
