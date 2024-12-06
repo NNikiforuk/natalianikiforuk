@@ -112,21 +112,19 @@ import { prices } from "../utils/prices";
 				</div>
 			</nav>
 			<div
-				class="relative z-10 container mx-auto px-4 h-screen flex items-center justify-center"
+				class="relative z-10 container mx-auto h-screen flex items-center justify-center"
 			>
 				<div class="text-center max-w-4xl mx-auto">
-					<h1
-						class="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-customWhite to-blue-100"
-					>
-						Strony internetowe
-						<span class="block">z pasją</span>
+					<h1 class="text-4xl md:text-6xl font-bold mb-6">
+						<span class="block text-white">Twoja wizja.</span>
+						<span class="text-2xl block mt-2 text-white"
+							>Nasze rozwiązanie.</span
+						>
+						<span class="block mt-2 text-cyan-200"> Twoja nowa strona. </span>
 					</h1>
-					<p class="text-xl md:text-2xl text-blue-100 mb-12 max-w-2xl mx-auto">
-						Przekształcamy Twoje wizje w nowoczesne, responsywne strony
-						internetowe
-					</p>
+
 					<div
-						class="flex flex-col sm:flex-row gap-4 justify-center max-w-64 mx-auto sm:max-w-none"
+						class="flex flex-col sm:flex-row gap-4 justify-center max-w-64 sm:max-w-none mx-8"
 					>
 						<a
 							href="#portfolio"
@@ -223,13 +221,23 @@ import { prices } from "../utils/prices";
 							prices.map((price) => (
 								<article class="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary/5 to-secondary/5 p-1">
 									<div class="absolute inset-0 bg-gradient-to-br from-primary to-secondary opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
-									<div class="relative bg-customWhite p-8 rounded-xl h-full flex flex-col">
-										<h3 class="text-xl font-semibold mb-4">{price.title}</h3>
-										<ul>
-											{price.points.map((el) => (
-												<li class="text-gray-600">{el}</li>
-											))}
-										</ul>
+									<div class="relative bg-customWhite py-8 px-4 rounded-xl h-full flex flex-col">
+										<h3 class="text-xl text-center font-semibold mb-4">
+											{price.title}
+										</h3>
+										{price.points ? (
+											<ul class="list-disc">
+												{price.points.map((el) => (
+													<li class="text-gray-600 ml-5 mb-2">{el}</li>
+												))}
+											</ul>
+										) : (
+											<div class="text-gray-600 text-center">{price.desc}</div>
+										)}
+										<div class="flex justify-center gap-1 mt-4 text-sm font-bold py-4 bg-secondary text-customWhite border border-customWhite/20 rounded-full">
+											<div>Cena:</div>
+											<div>{price.price}</div>
+										</div>
 									</div>
 								</article>
 							))
