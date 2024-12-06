@@ -13,6 +13,7 @@ export default {
 					dark: "#4338ca",
 				},
 				yellow: "#EBAD25",
+				customWhite: "#F0F8FF",
 			},
 		},
 	},
