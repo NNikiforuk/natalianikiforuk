@@ -55,6 +55,10 @@
 	animation: pulse 1s infinite;
 }
 
+.pulsationSlower {
+	animation: pulse 2.5s infinite;
+}
+
 .pulsation:hover {
 	animation: none;
 }
