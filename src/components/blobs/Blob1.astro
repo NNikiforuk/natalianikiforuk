@@ -1,27 +1,20 @@
 ---
-
+const gradientId = `gradient-${Math.random().toString(36).substr(2, 9)}`;
 ---
 
 <svg
-	id="Layer_2"
-	data-name="Layer 2"
 	xmlns="http://www.w3.org/2000/svg"
 	xmlns:xlink="http://www.w3.org/1999/xlink"
 	viewBox="0 0 344.35 260.67"
 >
 	<defs>
-		<style>
-			.cls-1 {
-				fill: url(#linear-gradient);
-			}
-		</style>
 		<linearGradient
-			id="linear-gradient"
-			x1="36.35"
-			y1="136.45"
-			x2="312.58"
-			y2="136.45"
-			gradientTransform="translate(-29.22 223.44) rotate(-61.16)"
+			id={gradientId}
+			x1="130.57"
+			y1="180.47"
+			x2="406.8"
+			y2="180.47"
+			gradientTransform="translate(-113.23 284.74) rotate(-61.16)"
 			gradientUnits="userSpaceOnUse"
 		>
 			<stop offset="0" stop-color="#f7b9d4"></stop>
@@ -32,9 +25,9 @@
 			<stop offset=".99" stop-color="#4bc5d9"></stop>
 		</linearGradient>
 	</defs>
-	<g id="Layer_1-2" data-name="Layer 1">
+	<g>
 		<path
-			class="cls-1"
+			fill={`url(#${gradientId})`}
 			d="M158.03,260.31c78.54,4.86,176.38-39.01,185.6-105.46C353.91,80.76,252.24-8.54,154.07.66,72.09,8.33-11.03,85.03,1.2,156.94c11.18,65.75,97.36,99.69,156.82,103.37Z"
 		></path>
 	</g>

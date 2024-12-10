@@ -6,7 +6,7 @@ export const projects = [
 		title: "Językowy Punkt Widzenia",
 		link: "https://jpw-kursy.pl/",
 		img: "/jpw.png",
-		desc: "Szkoła języków obcych online + wdrożenie platformy e-learningowej w systemie Moodle",
+		desc: "Szkoła języków obcych online oraz wdrożenie platformy e-learningowej w systemie Moodle",
 	},
 	{
 		id: 2,
