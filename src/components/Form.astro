@@ -1,0 +1,78 @@
+---
+import "../styles.css";
+import Blob1 from "./blobs/Blob1.astro";
+---
+
+<section class="py-20 relative overflow-hidden xl:py-40">
+	<h2 class="text-4xl font-bold text-center mb-4 z-10">
+		Zapraszamy do kontaktu
+	</h2>
+	<form
+		action="https://api.web3forms.com/submit"
+		method="POST"
+		class="flex flex-col justify-center px-4 z-10 max-w-80 mx-auto"
+	>
+		<input
+			type="hidden"
+			name="access_key"
+			value="c118ac76-141e-490b-b532-019702dbfe63"
+		/>
+		<input type="hidden" name="subject" value="New Submission from Web3Forms" />
+		<input type="hidden" name="from_name" value="Your Website Name" />
+		<input type="hidden" name="replyto" value="customer@example.com" />
+
+		<!-- //TODO -->
+
+		<!-- Optional: Custom Redirection or Thank you Page
+    Make sure you add full URL including https:// -->
+		<!-- <input
+			type="hidden"
+			name="redirect"
+			value="https://web3forms.com/success"
+		/> -->
+		<input
+			type="checkbox"
+			name="botcheck"
+			class="hidden"
+			style="display: none;"
+		/>
+
+		<input
+			type="email"
+			name="email"
+			placeholder="E-mail"
+			required
+			class="p-4 shadow-md rounded-lg text-sm"
+		/>
+		<input
+			type="text"
+			name="First Name"
+			placeholder="Imię i nazwisko / nazwa firmy"
+			required
+			class="p-4 shadow-md rounded-lg my-2 text-sm"
+		/>
+		<input
+			type="text"
+			name="Phone Number"
+			required
+			placeholder="Numer telefonu"
+			class="p-4 shadow-md rounded-lg text-sm"
+		/>
+		<textarea
+			name="message"
+			required
+			placeholder="Która oferta Cię zainteresowała? Napisz do nas, a prześlemy kwestionariusz"
+			class="p-4 shadow-md rounded-lg mt-2 mb-8 text-sm"></textarea>
+		<button
+			type="submit"
+			class="px-8 py-4 bg-teal-900 opacity-80 border rounded-full font-bold shadow-md hover:opacity-95 transition-all duration-75 text-white"
+			>Submit Form</button
+		>
+	</form>
+
+	<div
+		class="absolute top-2 -right-32 w-[700px] xl:w-[800px] sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 opacity-50 -z-10"
+	>
+		<Blob1 />
+	</div>
+</section>
