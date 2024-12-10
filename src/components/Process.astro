@@ -1,4 +1,6 @@
 ---
+import Blob3 from "./blobs/Blob3.astro";
+
 const process = [
 	{
 		id: 1,
@@ -33,8 +35,8 @@ const process = [
 ];
 ---
 
-<section class="py-20">
-	<div class="container mx-auto px-4">
+<section class="py-20 relative">
+	<div class="container mx-auto px-4 z-10">
 		<h2 class="text-4xl font-bold text-center mb-8">Jak działamy?</h2>
 		<div class="mt-12 sm:flex sm:justify-center sm:flex-wrap sm:gap-4">
 			{
@@ -54,5 +56,8 @@ const process = [
 				))
 			}
 		</div>
+	</div>
+	<div class="w-[250px] absolute overflow-hidden -left-16 -top-4 -z-10 opacity-50 sm:w-[350px] sm:-top-16">
+		<Blob3 />
 	</div>
 </section>

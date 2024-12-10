@@ -1,0 +1,31 @@
+---
+const gradientId = `gradient-${Math.random().toString(36).substr(2, 9)}`;
+---
+
+<svg
+	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	viewBox="0 0 207.64 186.99"
+>
+	<defs>
+		<linearGradient
+			id={gradientId}
+			x1="53.13"
+			y1="171.41"
+			x2="147.39"
+			y2=".25"
+			gradientUnits="userSpaceOnUse"
+		>
+			<stop offset="0" stop-color="#f7b9d4"></stop>
+			<stop offset=".11" stop-color="#ecb9d4"></stop>
+			<stop offset=".31" stop-color="#d1bbd5"></stop>
+			<stop offset=".56" stop-color="#a4bed6"></stop>
+			<stop offset=".86" stop-color="#67c3d8"></stop>
+			<stop offset=".99" stop-color="#4bc5d9"></stop>
+		</linearGradient>
+	</defs>
+	<path
+		fill={`url(#${gradientId})`}
+		d="M11.53,102.89C2.79,79.45-5.39,57.53,4.56,37.8,17.3,12.56,51.37,7.5,74.3,4.1c32.26-4.79,82.12-12.19,112.74,23.25,27,31.24,27.14,82,2.32,117.39-28.98,41.32-85.11,51.87-123.2,33.71-32.16-15.34-44.24-47.71-54.63-75.55Z"
+	></path>
+</svg>

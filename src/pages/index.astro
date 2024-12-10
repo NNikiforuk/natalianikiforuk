@@ -61,6 +61,26 @@ import Process from "../components/Process.astro";
 			.burger-active .line3 {
 				transform: rotate(-45deg) translate(8.5px, -8.5px);
 			}
+
+			@keyframes pulse {
+				0% {
+					transform: scale(1);
+				}
+				50% {
+					transform: scale(1.05);
+				}
+				100% {
+					transform: scale(1);
+				}
+			}
+
+			.pulsation {
+				animation: pulse 1s infinite;
+			}
+
+			.pulsation:hover {
+				animation: none;
+			}
 		</style>
 	</head>
 	<body class="bg-gradient-to-br from-slate-50 to-slate-100 text-slate-700">
@@ -107,17 +127,17 @@ import Process from "../components/Process.astro";
 					<div class="flex flex-col pt-20 px-6">
 						<a
 							href="#uslugi"
-							class="text-center py-3 border-b hover:pl-2 transition-all duration-300 font-bold"
+							class="text-center py-3 border-b hover:text-purple-950 transition-all duration-300 font-bold"
 							>Usługi</a
 						>
 						<a
 							href="#portfolio"
-							class="text-center py-3 border-b hover:pl-2 transition-all duration-300 font-bold"
+							class="text-center py-3 border-b hover:text-purple-950 transition-all duration-300 font-bold"
 							>Portfolio</a
 						>
 						<a
 							href="#kontakt"
-							class="text-center py-3 border-b hover:pl-2 transition-all duration-300 font-bold"
+							class="text-center py-3 border-b hover:text-purple-950 transition-all duration-300 font-bold"
 							>Kontakt</a
 						>
 					</div>
@@ -137,7 +157,7 @@ import Process from "../components/Process.astro";
 						<span class="text-xl block mt-2 text-slate-600"
 							>Nasze rozwiązanie.</span
 						>
-						<span class="block mt-2"> Twoja nowa strona internetowa. </span>
+						<span class="block mt-2">Twoja nowa strona internetowa. </span>
 					</h1>
 
 					<div
@@ -145,7 +165,7 @@ import Process from "../components/Process.astro";
 					>
 						<a
 							href="#portfolio"
-							class="px-8 py-4 bg-transparent border rounded-full font-bold shadow-md"
+							class="pulsation px-8 py-4 bg-transparent border rounded-full font-bold shadow-md"
 						>
 							Sprawdź ofertę
 						</a>
