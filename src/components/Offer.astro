@@ -31,7 +31,7 @@ const prices = [
 			"responsywność: dobrze wygląda na każdym urządzeniu",
 			"funkcjonalności dostosowane do Twoich potrzeb",
 		],
-		price: "od 1200 zł",
+		price: "od 1500 zł",
 	},
 	{
 		id: 4,
@@ -48,14 +48,14 @@ const prices = [
 		<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 			{
 				prices.map((price) => (
-					<article class="group relative overflow-hidden rounded-2xl p-1 shadow-lg">
-						<div class="absolute inset-0 bg-gradient-to-br group-hover:opacity-10 transition-opacity duration-300" />
+					<article class="group relative overflow-hidden rounded-2xl p-1 shadow-lg max-w-72 mx-auto w-full h-full">
+						<div class="absolute inset-0 bg-gradient-to-br group-hover:opacity-10 transition-opacity duration-300 flex-grow" />
 						<div class="relative  py-8 px-4 rounded-xl h-full flex flex-col">
 							<h3 class="text-xl text-center font-semibold mb-4 underline">
 								{price.title}
 							</h3>
 							{price.points ? (
-								<ul class="list-disc">
+								<ul class="list-disc flex-grow">
 									{price.points.map((el) => (
 										<li class="text-gray-600 ml-5 mb-2">{el}</li>
 									))}
@@ -63,7 +63,7 @@ const prices = [
 							) : (
 								<div class="text-gray-600 text-center">{price.desc}</div>
 							)}
-							<div class="flex justify-center gap-1 mt-4 text-sm font-bold py-4 bg-pink-900/10  border  rounded-full">
+							<div class="flex justify-center gap-1 mt-4 text-sm font-bold py-4 bg-pink-900/10  border  rounded-full w-44 mx-auto">
 								<div>Cena:</div>
 								<div>{price.price}</div>
 							</div>
