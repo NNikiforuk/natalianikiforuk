@@ -1,0 +1,58 @@
+---
+import Blob2 from "./blobs/Blob2.astro";
+import { Icon } from "astro-icon/components";
+
+const services = [
+	{
+		id: 1,
+		icon: "devices",
+		alt: "ikona telefonu i komputera",
+		title: "Responsywne strony internetowe",
+		desc: "Tworzymy nowoczesne projekty dostosowane do Twoich potrzeb. Dostępne na wszystkich urządzeniach.",
+	},
+	{
+		id: 2,
+		icon: "brush",
+		alt: "ikona pędzla",
+		title: "Spersonalizowany design",
+		desc: "Projekt dostosowany do Twoich potrzeb i estetyki.",
+	},
+	{
+		id: 3,
+		icon: "sos",
+		alt: "napis 'SOS'",
+		title: "Wsparcie techniczne",
+		desc: "Po zakończeniu współpracy udzielimy Ci pomocy w przypadku jakichkolwiek problemów. Nie zostaniesz sam/a.",
+	},
+];
+---
+
+<section class="pb-20">
+	<div class="container mx-auto px-4">
+		<h2 class="text-4xl font-bold text-center mb-4">Nasze usługi</h2>
+		<p class="text-gray-600 text-center mb-16 max-w-2xl mx-auto">
+			Dostarczamy kompleksowe rozwiązania dopasowane do Twoich potrzeb
+		</p>
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+			{
+				services.map((service) => (
+					<article class="group relative p-1 shadow-lg rounded-2xl bg-slate-50 z-10">
+						<div class="absolute inset-0" />
+						<div class="relative p-8 h-full flex flex-col">
+							<div class="mb-6">
+								<span class="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-violet-50">
+									<Icon name={service.icon} size={32} />
+								</span>
+							</div>
+							<h3 class="text-xl font-semibold mb-4">{service.title}</h3>
+							<p class="text-gray-600">{service.desc}</p>
+						</div>
+					</article>
+				))
+			}
+			<div class="w-[120px] absolute overflow-hidden -left-6 -top-6 z-0">
+				<Blob2 />
+			</div>
+		</div>
+	</div>
+</section>

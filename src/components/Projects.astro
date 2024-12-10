@@ -1,0 +1,69 @@
+---
+import Blobset from "./blobs/Blobset.astro";
+import { Image } from "astro:assets";
+import jpwIMG from "../assets/jpw.png";
+import parowaIMG from "../assets/parowa.png";
+import modifiersMG from "../assets/modifiers.png";
+
+const projects = [
+	{
+		id: 1,
+		title: "Językowy Punkt Widzenia",
+		link: "https://jpw-kursy.pl/",
+		img: jpwIMG,
+		desc: "Szkoła języków obcych online oraz wdrożenie platformy e-learningowej w systemie Moodle",
+	},
+	{
+		id: 2,
+		title: "Parafia w Parowej",
+		link: "https://parafiaparowa.pl/",
+		img: parowaIMG,
+		desc: "Strona internetowa dla parafii rzymskokatolickiej",
+	},
+	{
+		id: 3,
+		title: "Monthly Modifiers",
+		link: "https://monthlymodifiers.com/",
+		img: modifiersMG,
+		desc: "Aplikacja webowa do self-improvementu",
+	},
+];
+---
+
+<section class="py-20 bg-gray-50 relative">
+	<div class="container mx-auto px-4">
+		<h2 class="text-4xl font-bold text-center mb-4">Nasze realizacje</h2>
+		<p class="text-gray-600 text-center mb-16 max-w-2xl mx-auto">
+			Zobacz przykłady naszych najnowszych projektów
+		</p>
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+			{
+				projects.map((project) => (
+					<article class="group relative cursor-pointer p-4 shadow-lg rounded-2xl bg-slate-50 z-10">
+						<div class="sm:hidden text-center pb-4">
+							<h3 class="font-bold underline">{project.title}</h3>
+						</div>
+						<div>
+							<a href={project.link} target="_blank">
+								<Image
+									src={project.img}
+									alt={project.title}
+								/>
+							</a>
+						</div>
+						<div class="py-2 text-center">{project.desc}</div>
+						<div class="hidden sm:block absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300">
+							<div class="absolute bottom-0 left-0 right-0 p-4  transform translate-y-6 group-hover:translate-y-0 transition-transform duration-300">
+								<h3 class="text-xl font-semibold mb-2">{project.title}</h3>
+								<p class="text-gray-200 mb-4">{project.desc}</p>
+							</div>
+						</div>
+					</article>
+				))
+			}
+		</div>
+	</div>
+	<div class="w-[200px] absolute overflow-hidden left-0 -top-6 z-0">
+		<Blobset />
+	</div>
+</section>
