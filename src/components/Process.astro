@@ -41,7 +41,7 @@ const process = [
 		<div class="mt-12 sm:flex sm:justify-center sm:flex-wrap sm:gap-4">
 			{
 				process.map((el) => (
-					<div class="mb-12 flex flex-col">
+					<div class="mb-12 flex flex-col slidein">
 						<div class="flex items-center relative">
 							<div
 								class={`w-12 h-12 rounded-full flex items-center justify-center text-white shadow-lg group-hover:scale-110 opacity-60 absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 ${el.alert ? "bg-pink-200" : "bg-teal-400"}`}
@@ -57,7 +57,9 @@ const process = [
 			}
 		</div>
 	</div>
-	<div class="w-[250px] absolute overflow-hidden -left-16 -top-4 -z-10 opacity-50 sm:w-[350px] sm:-top-16">
+	<div
+		class="w-[250px] absolute overflow-hidden -left-16 -top-4 -z-10 opacity-50 sm:w-[350px] sm:-top-16"
+	>
 		<Blob3 />
 	</div>
 </section>

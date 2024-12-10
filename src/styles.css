@@ -1,0 +1,73 @@
+@font-face {
+	font-family: "Playfair";
+	src: url("/fonts/PlayfairDisplay.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+.playfair {
+	font-family: "Playfair", sans-serif;
+}
+
+.mobile-menu {
+	transform: translateX(100%);
+	transition: transform 0.3s ease-in-out;
+}
+
+.mobile-menu.active {
+	transform: translateX(0);
+}
+
+.burger-line {
+	transition: all 0.3s ease-in-out;
+	height: 4px;
+	width: 40px;
+	background-color: #5f6061;
+	border-radius: 5px;
+}
+
+.burger-active .line1 {
+	transform: rotate(45deg) translate(8.5px, 8.5px);
+}
+
+.burger-active .line2 {
+	opacity: 0;
+}
+
+.burger-active .line3 {
+	transform: rotate(-45deg) translate(8.5px, -8.5px);
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.05);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+.pulsation {
+	animation: pulse 1s infinite;
+}
+
+.pulsation:hover {
+	animation: none;
+}
+
+.slidein {
+	opacity: 0;
+	filter: blur(5px);
+	transform: translateX(-100%);
+	transition: all 1s;
+}
+
+.show {
+	opacity: 1;
+	filter: blur(0);
+	transform: translateX(0);
+}
