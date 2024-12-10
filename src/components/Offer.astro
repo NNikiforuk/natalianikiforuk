@@ -1,0 +1,76 @@
+---
+const prices = [
+	{
+		id: 1,
+		title: "Zaproszenie na ślub",
+		points: [
+			"1 strona",
+			"podstawowe SEO",
+			"responsywność: dobrze wygląda każdym urządzeniu",
+			"funkcjonalności dostosowane do Twoich potrzeb",
+		],
+		price: "od 300 zł",
+	},
+	{
+		id: 2,
+		title: "Prosta strona internetowa",
+		points: [
+			"1 strona",
+			"podstawowe SEO",
+			"responsywność: dobrze wygląda każdym urządzeniu",
+			"funkcjonalności dostosowane do Twoich potrzeb",
+		],
+		price: "od 800 zł",
+	},
+	{
+		id: 3,
+		title: "Złożona strona internetowa",
+		points: [
+			"więcej niż 1 podstrona",
+			"podstawowe SEO",
+			"responsywność: dobrze wygląda na każdym urządzeniu",
+			"funkcjonalności dostosowane do Twoich potrzeb",
+		],
+		price: "od 1200 zł",
+	},
+	{
+		id: 4,
+		title: "Inne",
+		desc: "Daj znać, czego potrzebujesz. My się zajmiemy resztą",
+		price: "do ustalenia",
+	},
+];
+---
+
+<section class="py-20">
+	<div class="container mx-auto px-4">
+		<h2 class="text-4xl font-bold text-center mb-4">Oferta</h2>
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+			{
+				prices.map((price) => (
+					<article class="group relative overflow-hidden rounded-2xl p-1 shadow-lg">
+						<div class="absolute inset-0 bg-gradient-to-br group-hover:opacity-10 transition-opacity duration-300" />
+						<div class="relative  py-8 px-4 rounded-xl h-full flex flex-col">
+							<h3 class="text-xl text-center font-semibold mb-4 underline">
+								{price.title}
+							</h3>
+							{price.points ? (
+								<ul class="list-disc">
+									{price.points.map((el) => (
+										<li class="text-gray-600 ml-5 mb-2">{el}</li>
+									))}
+								</ul>
+							) : (
+								<div class="text-gray-600 text-center">{price.desc}</div>
+							)}
+							<div class="flex justify-center gap-1 mt-4 text-sm font-bold py-4 bg-pink-900/10  border  rounded-full">
+								<div>Cena:</div>
+								<div>{price.price}</div>
+							</div>
+						</div>
+					</article>
+				))
+			}
+		</div>
+	</div>
+</section>

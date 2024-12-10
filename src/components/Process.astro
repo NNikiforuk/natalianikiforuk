@@ -1,0 +1,59 @@
+---
+const process = [
+	{
+		id: 1,
+		title: "Ustalenie oczekiwań",
+		alert: false,
+	},
+	{
+		id: 2,
+		title: "Propozycja designu",
+		alert: false,
+	},
+	{
+		id: 3,
+		title: "Zatwierdzenie designu",
+		alert: true,
+	},
+	{
+		id: 4,
+		title: "Tworzenie projektu",
+		alert: false,
+	},
+	{
+		id: 5,
+		title: "Zatwierdzenie projektu",
+		alert: true,
+	},
+	{
+		id: 6,
+		title: "Oddanie projektu",
+		alert: false,
+	},
+];
+---
+
+<section class="py-20">
+	<div class="container mx-auto px-4">
+		<h2 class="text-4xl font-bold text-center mb-8">Jak działamy?</h2>
+		<div class="relative mt-12">
+			<div class="absolute left-8 top-0 bottom-0 w-0.5"></div>
+			{
+				process.map((el) => (
+					<div class="group mb-12">
+						<div class="flex items-center relative">
+							<div
+								class={`w-12 h-12 rounded-full flex items-center justify-center text-white shadow-lg group-hover:scale-110 opacity-60 absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 ${el.alert ? "bg-pink-200" : "bg-teal-400"}`}
+							>
+								<span class="text-black font-bold">{el.id}</span>
+							</div>
+							<div class="bg-white p-6 pt-8 rounded-xl shadow-lg group-hover:-translate-y-1 transition-transform mx-auto w-52 text-center text-sm">
+								<h3 class="text-slate-700">{el.title}</h3>
+							</div>
+						</div>
+					</div>
+				))
+			}
+		</div>
+	</div>
+</section>

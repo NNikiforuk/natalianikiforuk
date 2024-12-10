@@ -1,9 +1,9 @@
 ---
-import { prices } from "../utils/prices";
-import { process } from "../utils/process";
 import Blob1 from "../components/blobs/Blob1.astro";
 import Services from "../components/Services.astro";
 import Projects from "../components/Projects.astro";
+import Offer from "../components/Offer.astro";
+import Process from "../components/Process.astro";
 ---
 
 <!doctype html>
@@ -156,136 +156,10 @@ import Projects from "../components/Projects.astro";
 		<main id="main-content">
 			<Services />
 			<Projects />
+			<Offer />
+			<Process />
 
-			<section class="py-20">
-				<div class="container mx-auto px-4">
-					<h2 class="text-4xl font-bold text-center mb-4">Oferta</h2>
-					<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-						{
-							prices.map((price) => (
-								<article class="group relative overflow-hidden rounded-2xl p-1">
-									<div class="absolute inset-0 bg-gradient-to-br group-hover:opacity-10 transition-opacity duration-300" />
-									<div class="relative  py-8 px-4 rounded-xl h-full flex flex-col">
-										<h3 class="text-xl text-center font-semibold mb-4">
-											{price.title}
-										</h3>
-										{price.points ? (
-											<ul class="list-disc">
-												{price.points.map((el) => (
-													<li class="text-gray-600 ml-5 mb-2">{el}</li>
-												))}
-											</ul>
-										) : (
-											<div class="text-gray-600 text-center">{price.desc}</div>
-										)}
-										<div class="flex justify-center gap-1 mt-4 text-sm font-bold py-4 bg-secondary  border  rounded-full">
-											<div>Cena:</div>
-											<div>{price.price}</div>
-										</div>
-									</div>
-								</article>
-							))
-						}
-					</div>
-				</div>
-			</section>
-
-			<section class="py-20 bg-gray-50">
-				<div class="container mx-auto px-4">
-					<h2 class="text-4xl font-bold text-center mb-4">Jak działamy?</h2>
-					<div class="relative mt-10">
-						<div class="absolute left-8 top-0 bottom-0 w-0.5"></div>
-
-						{
-							process.map((el) => (
-								<div class="group mb-16">
-									<div class="flex items-center gap-8 relative">
-										<div class="w-16 h-16 rounded-full flex items-center justify-center text-white shadow-lg group-hover:scale-110">
-											<span>
-												<img
-													width="40"
-													height="auto"
-													src={el.src}
-													alt={el.alt}
-												/>
-											</span>
-										</div>
-										<div class="bg-white p-6 rounded-xl shadow-lg flex-1 group-hover:-translate-y-1 transition-transform">
-											<h3 class="text-gray-600">{el.title}</h3>
-										</div>
-									</div>
-								</div>
-							))
-						}
-
-						<!-- <div class="group mb-16">
-							<div class="flex items-center gap-8 relative">
-								<div
-									class="w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform"
-								>
-									<span class="text-2xl">🎨</span>
-								</div>
-								<div
-									class="bg-white p-6 rounded-xl shadow-lg flex-1 group-hover:-translate-y-1 transition-transform"
-								>
-									<h3 class="text-xl font-bold mb-2">Prototyp</h3>
-									<p class="text-gray-600">Design i makiety</p>
-								</div>
-							</div>
-						</div> -->
-
-						<!-- <div class="group mb-16">
-							<div class="flex items-center gap-8 relative">
-								<div
-									class="w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform"
-								>
-									<span class="text-2xl">💻</span>
-								</div>
-								<div
-									class="bg-white p-6 rounded-xl shadow-lg flex-1 group-hover:-translate-y-1 transition-transform"
-								>
-									<h3 class="text-xl font-bold mb-2">Programowanie</h3>
-									<p class="text-gray-600">Implementacja</p>
-								</div>
-							</div>
-						</div> -->
-
-						<!-- <div class="group mb-16">
-							<div class="flex items-center gap-8 relative">
-								<div
-									class="w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform"
-								>
-									<span class="text-2xl">✓</span>
-								</div>
-								<div
-									class="bg-white p-6 rounded-xl shadow-lg flex-1 group-hover:-translate-y-1 transition-transform"
-								>
-									<h3 class="text-xl font-bold mb-2">Ocena</h3>
-									<p class="text-gray-600">Testy i poprawki</p>
-								</div>
-							</div>
-						</div> -->
-
-						<!-- <div class="group mb-16">
-							<div class="flex items-center gap-8 relative">
-								<div
-									class="w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform"
-								>
-									<span class="text-2xl">📦</span>
-								</div>
-								<div
-									class="bg-white p-6 rounded-xl shadow-lg flex-1 group-hover:-translate-y-1 transition-transform"
-								>
-									<h3 class="text-xl font-bold mb-2">Oddanie</h3>
-									<p class="text-gray-600">Wdrożenie</p>
-								</div>
-							</div>
-						</div> -->
-					</div>
-				</div>
-			</section>
-
-			<footer class="bg-gray-900 py-12" role="contentinfo">
+			<!-- <footer class="bg-gray-900 py-12" role="contentinfo">
 				<div class="container mx-auto px-4">
 					<div class="flex flex-col md:flex-row justify-between items-center">
 						<div class="mb-8 md:mb-0">
@@ -312,7 +186,7 @@ import Projects from "../components/Projects.astro";
 						<p>&copy; {new Date().getFullYear()} Niki codes</p>
 					</div>
 				</div>
-			</footer>
+			</footer> -->
 			<script>
 				const burgerBtn = document.getElementById(
 					"burger-btn"
