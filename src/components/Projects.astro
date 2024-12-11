@@ -32,7 +32,9 @@ const projects = [
 
 <section class="py-20 relative">
 	<div class="container mx-auto px-4">
-		<h2 class="text-4xl font-bold text-center mb-4">Nasze realizacje</h2>
+		<h2 id="realizacje" class="text-4xl font-bold text-center mb-4">
+			Nasze realizacje
+		</h2>
 		<p class="text-gray-600 text-center mb-10 max-w-2xl mx-auto">
 			Zobacz przykłady naszych najnowszych projektów
 		</p>
@@ -45,16 +47,15 @@ const projects = [
 						</div>
 						<div>
 							<a href={project.link} target="_blank">
-								<Image
-									src={project.img}
-									alt={project.title}
-								/>
+								<Image src={project.img} alt={project.title} />
 							</a>
 						</div>
 						<div class="py-2 text-center text-sm">{project.desc}</div>
 						<div class="hidden sm:block absolute inset-0 bg-gradient-to-t from-teal-900 via-pink-300/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300">
 							<div class="absolute bottom-0 left-0 right-0 p-4  transform translate-y-6 group-hover:translate-y-0 transition-transform duration-300">
-								<h3 class="text-xl font-semibold mb-2 text-white">{project.title}</h3>
+								<h3 class="text-xl font-semibold mb-2 text-white">
+									{project.title}
+								</h3>
 							</div>
 						</div>
 					</article>

@@ -6,6 +6,15 @@
 	font-display: swap;
 }
 
+* {
+	scroll-behavior: smooth;
+}
+
+h2[id] {
+    padding-top: 150px;
+    margin-top: -150px;
+}
+
 .playfair {
 	font-family: "Playfair", sans-serif;
 }
