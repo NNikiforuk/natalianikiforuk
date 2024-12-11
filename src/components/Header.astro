@@ -64,14 +64,13 @@ const { homepage } = Astro.props;
 			</div>
 		</div>
 	</nav>
-
+{
+		homepage && (
 	<div
 		class="absolute -top-12 right-50% w-[400px] sm:w-[450px] md:w-[600px] lg:w-[800px] lg:-top-64 opacity-50 overflow-hidden sm:right-48 sm:-top-28"
 	>
 		<Blob1 />
 	</div>
-	{
-		homepage && (
 			<div class="relative z-10 container mx-auto h-screen flex items-center justify-center">
 				<div class="text-center max-w-4xl mx-auto">
 					<h1 class="text-4xl md:text-6xl font-bold mb-6 playfair">
@@ -94,7 +93,7 @@ const { homepage } = Astro.props;
 			</div>
 		)
 	}
-</header>
+</>
 
 <script>
 	import "../scripts/main";
