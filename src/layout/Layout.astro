@@ -1,0 +1,35 @@
+---
+import Footer from "../components/Footer.astro";
+import Form from "../components/Form.astro";
+import Header from "../components/Header.astro";
+import Offer from "../components/Offer.astro";
+import Process from "../components/Process.astro";
+import Projects from "../components/Projects.astro";
+import Services from "../components/Services.astro";
+import "../styles.css";
+
+const { homepage } = Astro.props;
+---
+
+<!doctype html>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="description"
+			content="Niki codes - profesjonalne tworzenie stron internetowych"
+		/>
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>niki codes.</title>
+	</head>
+	<body class="bg-gradient-to-br from-slate-50 to-slate-100 text-slate-700">
+		<Header homepage={homepage} />
+		<main id="main-content">
+			<slot />
+			
+		</main>
+		<Footer />
+	</body>
+</html>
