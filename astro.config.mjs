@@ -5,6 +5,9 @@ import tailwind from '@astrojs/tailwind';
 
 import icon from 'astro-icon';
 
+import sitemap from '@astrojs/sitemap';
+
 export default defineConfig({
-    integrations: [tailwind(), icon()],
+	site: "https://nikicodes.com",
+	integrations: [tailwind(), icon(), sitemap()],
 });
