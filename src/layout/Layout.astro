@@ -33,7 +33,9 @@ const { homepage } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>niki codes.</title>
 	</head>
-	<body class="bg-gradient-to-br from-slate-50 to-slate-100 text-slate-700">
+	<body
+		class="bg-gradient-to-br from-slate-50 to-slate-100 text-slate-700 min-h-screen flex flex-col"
+	>
 		<!-- Google Tag Manager (noscript) -->
 		<noscript
 			><iframe
@@ -44,7 +46,7 @@ const { homepage } = Astro.props;
 		>
 		<!-- End Google Tag Manager (noscript) -->
 		<Header homepage={homepage} />
-		<main id="main-content">
+		<main id="main-content" class="flex-1">
 			<slot />
 		</main>
 		<Footer />

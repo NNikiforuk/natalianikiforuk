@@ -15,6 +15,11 @@ h2[id] {
     margin-top: -150px;
 }
 
+h3 {
+	padding: 20px 0;
+	text-align: center;font-weight: bold;
+}
+
 .playfair {
 	font-family: "Playfair", sans-serif;
 }
@@ -83,4 +88,22 @@ h2[id] {
 	opacity: 1;
 	filter: blur(0);
 	transform: translateX(0);
+}
+
+.document a {
+	color: rgb(24, 71, 180);
+}
+
+.document ul {
+	list-style-type: decimal;
+	margin-left: 1rem;
+}
+
+.document ol {
+	list-style-type: disc;
+	margin-left: 1.5rem;
+}
+
+.document ul li, .document ol li {
+	padding: 5px 0;
 }
