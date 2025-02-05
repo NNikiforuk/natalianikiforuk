@@ -9,6 +9,19 @@ const { homepage } = Astro.props;
 <!doctype html>
 <html lang="pl">
 	<head>
+		<!-- Google tag (gtag.js) -->
+		<script
+			is:inline
+			src="https://www.googletagmanager.com/gtag/js?id=G-GNM037WTR2"></script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
+
+			gtag("config", "G-GNM037WTR2");
+		</script>
 		<meta charset="UTF-8" />
 		<meta
 			name="description"
